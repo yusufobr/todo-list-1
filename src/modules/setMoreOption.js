@@ -1,4 +1,4 @@
-import StatusComplete from "./StatusComplete";
+import StatusComplete from './StatusComplete';
 
 function setMoreOption(TodoList, renderTodo, TodoContainer) {
   if (!TodoList) {
@@ -8,7 +8,7 @@ function setMoreOption(TodoList, renderTodo, TodoContainer) {
     const More = document.querySelector(`.more-option-${todo.index}`);
     const DBtn = document.querySelector(`.delete-${todo.index}`);
     const TodoDes = document.querySelector(`.todo-item-i${todo.index}`);
-    const CompletedBox = document.querySelector(".completed-"+todo.index);
+    const CompletedBox = document.querySelector(`.completed-${todo.index}`);
 
     More.addEventListener('mouseover', () => {
       More.style.display = 'none';
@@ -51,8 +51,7 @@ function setMoreOption(TodoList, renderTodo, TodoContainer) {
       setMoreOption(TodoList, renderTodo, TodoContainer);
     });
 
-  
-    StatusComplete(CompletedBox, TodoList,TodoContainer,renderTodo,setMoreOption,todo)
+    StatusComplete(CompletedBox, TodoList, TodoContainer, renderTodo, setMoreOption, todo);
   });
 }
 

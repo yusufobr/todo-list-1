@@ -5,7 +5,7 @@ import './styles.css';
 const TodoContainer = document.querySelector('.todo-list');
 const Input = document.querySelector('.add');
 const Form = document.querySelector('form');
-const Clear = document.querySelector(".clear");
+const Clear = document.querySelector('.clear');
 
 let TodoList = [];
 function getTodos() {
@@ -33,9 +33,9 @@ function addTodo() {
   });
 }
 
-Clear.addEventListener("click", (e)=>{
+Clear.addEventListener('click', (e) => {
   getTodos();
-  let newK =TodoList.filter((item)=> !item.completed);
+  const newK = TodoList.filter((item) => !item.completed);
   for (let i = 0; i < newK.length; i += 1) {
     newK[i].index = i + 1;
   }
@@ -45,7 +45,7 @@ Clear.addEventListener("click", (e)=>{
 
   renderTodo(TodoList, TodoContainer);
   setMoreOption(TodoList, renderTodo, TodoContainer);
-})
+});
 
 addTodo();
 renderTodo(TodoList, TodoContainer);
