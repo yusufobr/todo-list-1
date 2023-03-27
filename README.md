@@ -197,7 +197,7 @@ You can deploy this project by just pushing it and github pages will do the rest
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/0xMALVEE/todo-list/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
