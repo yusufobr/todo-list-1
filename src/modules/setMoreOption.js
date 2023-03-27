@@ -19,8 +19,12 @@ function setMoreOption(TodoList, renderTodo, TodoContainer) {
 
     DBtn.addEventListener('click', () => {
       const filtered = TodoList.filter((k) => k.index !== todo.index);
+      for (let i = 0; i < filtered.length; i += 1) {
+        filtered[i].index = i + 1;
+      }
       TodoList = filtered;
       localStorage.setItem('todos', JSON.stringify(TodoList));
+
       renderTodo(TodoList, TodoContainer);
       setMoreOption(TodoList, renderTodo, TodoContainer);
     });
