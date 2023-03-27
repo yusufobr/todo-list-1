@@ -33,7 +33,7 @@ function addTodo() {
   });
 }
 
-Clear.addEventListener('click', (e) => {
+Clear.addEventListener('click', () => {
   getTodos();
   const newK = TodoList.filter((item) => !item.completed);
   for (let i = 0; i < newK.length; i += 1) {
