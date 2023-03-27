@@ -1,0 +1,50 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul li div {
+  display: flex;
+}
+
+div.container {
+  width: 200px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+button.clear {
+  border: 0 none;
+  width: 100%;
+  padding: 20px;
+}
+
+div.title { 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input.add {
+  border: 0 none;
+}
+
+form {
+  border-top: #888 1px solid;
+  border-bottom: #888 1px solid;
+}
