@@ -34,7 +34,7 @@ button.clear {
   padding: 20px;
 }
 
-div.title { 
+div.title {
   display: flex;
   align-items: center;
   justify-content: space-between;

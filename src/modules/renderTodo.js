@@ -1,6 +1,6 @@
-const renderTodo = (Todos, Element)=>{
-  let finalHtml = ""
-  Todos.forEach(todo =>{
+const renderTodo = (Todos, Element) => {
+  let finalHtml = '';
+  Todos.forEach((todo) => {
     finalHtml += `
 
       <li>
@@ -11,10 +11,10 @@ const renderTodo = (Todos, Element)=>{
       <i class="material-icons dots">more_vert</i>
       
       </li>
-    `
-  })
+    `;
+  });
 
   Element.innerHTML = finalHtml;
-}
+};
 
 export default renderTodo;

@@ -1,32 +1,32 @@
-const path = require("path")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode:"development",
-  entry: path.resolve(__dirname, "src/index.js"),
+  mode: 'development',
+  entry: path.resolve(__dirname, 'src/index.js'),
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "main.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "dist")
+      directory: path.resolve(__dirname, 'dist'),
     },
-    open: true
+    open: true,
   },
-  module:{
+  module: {
     rules: [
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
-      }
-    ]
+      },
+    ],
   },
-  plugins : [
+  plugins: [
     new HtmlWebpackPlugin({
-      title:"Todo app",
-      filename:"index.html",
-      template:"src/index.html"
-    })
-  ]
-}
+      title: 'Todo app',
+      filename: 'index.html',
+      template: 'src/index.html',
+    }),
+  ],
+};

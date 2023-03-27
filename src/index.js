@@ -1,7 +1,7 @@
-import renderTodo from "./modules/renderTodo";
-import "./styles.css"
+import renderTodo from './modules/renderTodo';
+import './styles.css';
 
-const todo_container = document.querySelector(".todo-list")
+const TodoContainer = document.querySelector('.todo-list');
 
 const TodoList = [{
   index: 0,
@@ -14,4 +14,4 @@ const TodoList = [{
   completed: false,
 }];
 
-renderTodo(TodoList, todo_container)
+renderTodo(TodoList, TodoContainer);
