@@ -139,7 +139,7 @@ To run the project, execute the following command:
 command:
 
 ```sh
-  live-server
+  npm run dev
 ```
 
 
