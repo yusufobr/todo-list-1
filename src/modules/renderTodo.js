@@ -5,7 +5,7 @@ const renderTodo = (Todos, Element) => {
 
       <li>
       <div>
-        <input ${todo.completed ? 'checked' : ''} type="checkbox" />
+        <input ${todo.completed ? 'checked' : ''} type="checkbox" class="completed-${todo.index}" />
         <input value="${todo.discription}" class="todo-item-each todo-item-i${todo.index}"/>
       </div>
       <i class="material-icons dots more-option-${todo.index}">more_vert</i>
