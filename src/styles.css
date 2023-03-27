@@ -48,3 +48,25 @@ form {
   border-top: #888 1px solid;
   border-bottom: #888 1px solid;
 }
+
+div.add-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.add-div button {
+  border: 0;
+  background: none;
+}
+
+div.add-div button:hover {
+  cursor: pointer;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.todo-item-each {
+  border: none;
+}
