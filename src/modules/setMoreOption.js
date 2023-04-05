@@ -1,4 +1,4 @@
-import StatusComplete from './StatusComplete';
+import { StatusComplete } from './StatusComplete';
 
 function deleteFromList(TodoList, todo) {
   const filtered = TodoList.filter((k) => k.index !== todo.index);
@@ -6,6 +6,20 @@ function deleteFromList(TodoList, todo) {
     filtered[i].index = i + 1;
   }
   return filtered;
+}
+
+function editDescription(TodoList, todo, e) {
+  const newT = TodoList.map((p) => {
+    if (p.index === todo.index) {
+      return {
+        discription: e.target.value,
+        index: p.index,
+        completed: p.completed,
+      };
+    }
+    return p;
+  });
+  return newT;
 }
 
 function setMoreOption(TodoList, renderTodo, TodoContainer) {
@@ -38,18 +52,7 @@ function setMoreOption(TodoList, renderTodo, TodoContainer) {
     });
 
     TodoDes.addEventListener('change', (e) => {
-      const newT = TodoList.map((p) => {
-        if (p.index === todo.index) {
-          return {
-            discription: e.target.value,
-            index: p.index,
-            completed: p.completed,
-          };
-        }
-        return p;
-      });
-
-      TodoList = newT;
+      TodoList = editDescription(TodoList, todo, e);
 
       localStorage.setItem('todos', JSON.stringify(TodoList));
       renderTodo(TodoList, TodoContainer);
@@ -63,4 +66,5 @@ function setMoreOption(TodoList, renderTodo, TodoContainer) {
 export {
   setMoreOption,
   deleteFromList,
+  editDescription,
 };
