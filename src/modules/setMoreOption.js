@@ -1,5 +1,13 @@
 import StatusComplete from './StatusComplete';
 
+function deleteFromList(TodoList, todo) {
+  const filtered = TodoList.filter((k) => k.index !== todo.index);
+  for (let i = 0; i < filtered.length; i += 1) {
+    filtered[i].index = i + 1;
+  }
+  return filtered;
+}
+
 function setMoreOption(TodoList, renderTodo, TodoContainer) {
   if (!TodoList) {
     return;
@@ -21,11 +29,8 @@ function setMoreOption(TodoList, renderTodo, TodoContainer) {
     });
 
     DBtn.addEventListener('click', () => {
-      const filtered = TodoList.filter((k) => k.index !== todo.index);
-      for (let i = 0; i < filtered.length; i += 1) {
-        filtered[i].index = i + 1;
-      }
-      TodoList = filtered;
+      TodoList = deleteFromList(TodoList, todo);
+
       localStorage.setItem('todos', JSON.stringify(TodoList));
 
       renderTodo(TodoList, TodoContainer);
@@ -55,4 +60,7 @@ function setMoreOption(TodoList, renderTodo, TodoContainer) {
   });
 }
 
-export default setMoreOption;
+export {
+  setMoreOption,
+  deleteFromList,
+};
