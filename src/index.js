@@ -1,5 +1,6 @@
 import renderTodo from './modules/renderTodo';
-import { setMoreOption, deleteFromList } from './modules/setMoreOption';
+import { setMoreOption, deleteFromList, editDescription } from './modules/setMoreOption';
+import { CompleteStatus } from './modules/StatusComplete';
 import './styles.css';
 
 const TodoContainer = document.querySelector('.todo-list');
@@ -39,14 +40,18 @@ function addTodo() {
 
 export default addTodo;
 
-Clear.addEventListener('click', () => {
-  getTodos();
+function ClearCompleted(TodoList) {
   const newK = TodoList.filter((item) => !item.completed);
   for (let i = 0; i < newK.length; i += 1) {
     newK[i].index = i + 1;
   }
 
-  TodoList = newK;
+  return newK;
+}
+
+Clear.addEventListener('click', () => {
+  getTodos();
+  TodoList = ClearCompleted(TodoList);
   localStorage.setItem('todos', JSON.stringify(TodoList));
 
   renderTodo(TodoList, TodoContainer);
@@ -57,4 +62,6 @@ addTodo();
 renderTodo(TodoList, TodoContainer);
 setMoreOption(TodoList, renderTodo, TodoContainer);
 
-export { addTodoToList, deleteFromList };
+export {
+  addTodoToList, deleteFromList, CompleteStatus, editDescription,
+};

@@ -1,6 +1,6 @@
-jest.mock('./index');
+jest.mock('../index');
 
-const { addTodoToList, deleteFromList } = require('./index');
+const { addTodoToList, deleteFromList } = require('../index');
 
 describe('Add and Remove Todo', () => {
   test('should add items', () => {

@@ -176,6 +176,12 @@ You can deploy this project by just pushing it and github pages will do the rest
 - Twitter: [@twitterhandle](https://twitter.com/alveedev)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/0xmalvee)
 
+👤 **Umair Hamza**
+
+- GitHub: [@emhamza](https://github.com/emhamza)
+- Twitter: [@uhamzaz](https://twitter.com/uhamzaz)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/umair-hamza-a8262b261/)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
