@@ -1,5 +1,5 @@
 import renderTodo from './modules/renderTodo';
-import setMoreOption from './modules/setMoreOption';
+import { setMoreOption, deleteFromList } from './modules/setMoreOption';
 import './styles.css';
 
 const TodoContainer = document.querySelector('.todo-list');
@@ -16,11 +16,15 @@ function getTodos() {
 
 getTodos();
 
+function addTodoToList(todo) {
+  TodoList.push(todo);
+}
+
 function addTodo() {
   Form.addEventListener('submit', (e) => {
     e.preventDefault();
     getTodos();
-    TodoList.push({
+    addTodoToList({
       discription: Input.value,
       index: TodoList.length !== 0 ? TodoList[TodoList.length - 1].index + 1 : 1,
       completed: false,
@@ -32,6 +36,8 @@ function addTodo() {
     Input.value = '';
   });
 }
+
+export default addTodo;
 
 Clear.addEventListener('click', () => {
   getTodos();
@@ -50,3 +56,5 @@ Clear.addEventListener('click', () => {
 addTodo();
 renderTodo(TodoList, TodoContainer);
 setMoreOption(TodoList, renderTodo, TodoContainer);
+
+export { addTodoToList, deleteFromList };
